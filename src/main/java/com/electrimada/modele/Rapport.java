@@ -1,10 +1,11 @@
 package com.electrimada.modele;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Rapport {
     private String idRapport;
-    private Date dateRapport;
+    private LocalDateTime dateRapport;
     private double consommationTotale;
     private double batterieDebut;
     private double batterieFin;
@@ -13,7 +14,7 @@ public class Rapport {
     public Rapport() {}
 
     // Full constructor
-    public Rapport(String idRapport, Date dateRapport, double consommationTotale, double batterieDebut, double batterieFin) {
+    public Rapport(String idRapport, LocalDateTime dateRapport, double consommationTotale, double batterieDebut, double batterieFin) {
         this.idRapport = idRapport;
         this.dateRapport = dateRapport;
         this.consommationTotale = consommationTotale;
@@ -30,11 +31,11 @@ public class Rapport {
         this.idRapport = idRapport;
     }
 
-    public Date getDateRapport() {
+    public LocalDateTime getDateRapport() {
         return dateRapport;
     }
 
-    public void setDateRapport(Date dateRapport) {
+    public void setDateRapport(LocalDateTime dateRapport) {
         this.dateRapport = dateRapport;
     }
 
@@ -78,11 +79,11 @@ public class Rapport {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rapport rapport = (Rapport) o;
-        return idRapport != null ? idRapport.equals(rapport.idRapport) : rapport.idRapport == null;
+        return Objects.equals(idRapport, rapport.idRapport);
     }
 
     @Override
     public int hashCode() {
-        return idRapport != null ? idRapport.hashCode() : 0;
+        return Objects.hash(idRapport);
     }
 }

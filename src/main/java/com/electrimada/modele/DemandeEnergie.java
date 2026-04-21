@@ -1,11 +1,12 @@
 package com.electrimada.modele;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class DemandeEnergie {
     private String idDemande;
     private double quantiteKwh;
-    private Date heureSouhaitee;
+    private LocalDateTime heureSouhaitee;
     private String niveauCriticite;
     private boolean estAcceptee;
     private String idFoyer;
@@ -14,7 +15,7 @@ public class DemandeEnergie {
     public DemandeEnergie() {}
 
     // Full constructor
-    public DemandeEnergie(String idDemande, double quantiteKwh, Date heureSouhaitee, String niveauCriticite, 
+    public DemandeEnergie(String idDemande, double quantiteKwh, LocalDateTime heureSouhaitee, String niveauCriticite, 
                           boolean estAcceptee, String idFoyer) {
         this.idDemande = idDemande;
         this.quantiteKwh = quantiteKwh;
@@ -41,11 +42,11 @@ public class DemandeEnergie {
         this.quantiteKwh = quantiteKwh;
     }
 
-    public Date getHeureSouhaitee() {
+    public LocalDateTime getHeureSouhaitee() {
         return heureSouhaitee;
     }
 
-    public void setHeureSouhaitee(Date heureSouhaitee) {
+    public void setHeureSouhaitee(LocalDateTime heureSouhaitee) {
         this.heureSouhaitee = heureSouhaitee;
     }
 
@@ -90,11 +91,11 @@ public class DemandeEnergie {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DemandeEnergie that = (DemandeEnergie) o;
-        return idDemande != null ? idDemande.equals(that.idDemande) : that.idDemande == null;
+        return Objects.equals(idDemande, that.idDemande);
     }
 
     @Override
     public int hashCode() {
-        return idDemande != null ? idDemande.hashCode() : 0;
+        return Objects.hash(idDemande);
     }
 }

@@ -1,5 +1,7 @@
 package com.electrimada.modele;
 
+import java.util.Objects;
+
 public class Foyer {
     private String idFoyer;
     private String nom;
@@ -76,12 +78,11 @@ public class Foyer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Foyer foyer = (Foyer) o;
-        return idFoyer != null ? idFoyer.equals(foyer.idFoyer) : foyer.idFoyer == null;
+        return Objects.equals(idFoyer, foyer.idFoyer);
     }
 
-@Override
+    @Override
     public int hashCode() {
-        return idFoyer != null ? idFoyer.hashCode() : 0;
+        return Objects.hash(idFoyer);
     }
-
 }
