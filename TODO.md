@@ -1,7 +1,9 @@
-# TODO: Test DB Connection and List Tables
+# DAO Layer Implementation
+## Previous
+- [x] Model/DB tested ✅
 
-- [x] Step 1: Update TestConnexionDB.java to list tables after connection.
-- [x] Step 2: Compile the test file.
-- [x] Step 3: Run the test to verify connection and print tables.
-- [x] Step 4: Complete task.
-
+## DAO Plan
+- [x] Step 1: Create FoyerDAO.java (CRUD)
+- [x] Step 2: mvn compile & test FoyerDAO.main()
+- [ ] Step 3: Create DAOs for other models (BatterieDAO, DemandeEnergieDAO, etc.)
+- [ ] Step 4: Complete DAO layer ✅
